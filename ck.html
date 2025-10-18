@@ -1,0 +1,581 @@
+<!DOCTYPE html>
+<html lang="mr">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Mukundraj Graphics & Gifts - Contact Us</title>
+    <style>
+        * {
+            margin: 0;
+            padding: 0;
+            box-sizing: border-box;
+        }
+
+        body {
+            font-family: 'Segoe UI', Tahoma, Geneva, Verdana, sans-serif;
+            background: linear-gradient(135deg, #0a0a0a 0%, #2d1810 50%, #0a0a0a 100%);
+            min-height: 100vh;
+            display: flex;
+            justify-content: center;
+            align-items: center;
+            overflow-x: hidden;
+            position: relative;
+            padding: 20px;
+        }
+
+        /* Animated floating shapes */
+        .shape {
+            position: absolute;
+            opacity: 0.1;
+            animation: float 25s infinite ease-in-out;
+        }
+
+        .shape1 {
+            width: 180px;
+            height: 180px;
+            background: linear-gradient(135deg, #ff6b35, #f7931e);
+            border-radius: 50%;
+            top: 8%;
+            left: 3%;
+            animation-delay: 0s;
+            filter: blur(50px);
+        }
+
+        .shape2 {
+            width: 220px;
+            height: 220px;
+            background: linear-gradient(135deg, #ff8c42, #ff6b35);
+            border-radius: 30% 70% 70% 30% / 30% 30% 70% 70%;
+            top: 45%;
+            right: 3%;
+            animation-delay: 5s;
+            filter: blur(60px);
+        }
+
+        .shape3 {
+            width: 140px;
+            height: 140px;
+            background: linear-gradient(135deg, #f7931e, #ff6b35);
+            transform: rotate(45deg);
+            bottom: 8%;
+            left: 8%;
+            animation-delay: 10s;
+            filter: blur(40px);
+        }
+
+        .shape4 {
+            width: 200px;
+            height: 200px;
+            background: linear-gradient(135deg, #ff6b35, #ff8c42);
+            clip-path: polygon(50% 0%, 100% 50%, 50% 100%, 0% 50%);
+            top: 25%;
+            right: 15%;
+            animation-delay: 15s;
+            filter: blur(55px);
+        }
+
+        @keyframes float {
+            0%, 100% {
+                transform: translate(0, 0) rotate(0deg) scale(1);
+            }
+            25% {
+                transform: translate(35px, -45px) rotate(90deg) scale(1.15);
+            }
+            50% {
+                transform: translate(-25px, -90px) rotate(180deg) scale(0.85);
+            }
+            75% {
+                transform: translate(-45px, -45px) rotate(270deg) scale(1.08);
+            }
+        }
+
+        /* Language Toggle */
+        .language-toggle {
+            position: absolute;
+            top: 20px;
+            right: 20px;
+            z-index: 100;
+            background: rgba(255, 107, 53, 0.15);
+            backdrop-filter: blur(10px);
+            border: 1px solid rgba(255, 107, 53, 0.3);
+            border-radius: 50px;
+            padding: 8px;
+            display: flex;
+            gap: 5px;
+        }
+
+        .lang-btn {
+            padding: 10px 20px;
+            background: transparent;
+            color: #b0b0b0;
+            border: none;
+            border-radius: 50px;
+            cursor: pointer;
+            font-weight: 600;
+            transition: all 0.3s ease;
+            font-size: 0.9em;
+        }
+
+        .lang-btn.active {
+            background: linear-gradient(135deg, #ff6b35, #f7931e);
+            color: white;
+        }
+
+        .container {
+            background: rgba(25, 25, 25, 0.75);
+            backdrop-filter: blur(25px);
+            -webkit-backdrop-filter: blur(25px);
+            padding: 50px 45px;
+            border-radius: 35px;
+            border: 1px solid rgba(255, 107, 53, 0.25);
+            box-shadow: 
+                0 10px 40px 0 rgba(0, 0, 0, 0.6),
+                inset 0 1px 0 0 rgba(255, 255, 255, 0.08);
+            max-width: 580px;
+            width: 100%;
+            position: relative;
+            z-index: 10;
+            animation: slideIn 0.9s ease-out;
+        }
+
+        @keyframes slideIn {
+            from {
+                opacity: 0;
+                transform: translateY(-50px) scale(0.95);
+            }
+            to {
+                opacity: 1;
+                transform: translateY(0) scale(1);
+            }
+        }
+
+        .brand-name {
+            text-align: center;
+            font-size: 2.8em;
+            font-weight: 800;
+            margin-bottom: 8px;
+            letter-spacing: -1.5px;
+            line-height: 1.2;
+        }
+
+        .brand-name .gradient-text {
+            background: linear-gradient(135deg, #ff6b35 0%, #f7931e 50%, #ffb347 100%);
+            -webkit-background-clip: text;
+            -webkit-text-fill-color: transparent;
+            background-clip: text;
+            display: inline-block;
+            animation: shimmer 3s infinite;
+        }
+
+        @keyframes shimmer {
+            0%, 100% {
+                filter: brightness(1);
+            }
+            50% {
+                filter: brightness(1.3);
+            }
+        }
+
+        .brand-name .and {
+            color: #888;
+            font-size: 0.7em;
+            font-weight: 400;
+        }
+
+        h2 {
+            text-align: center;
+            color: #e0e0e0;
+            margin-bottom: 12px;
+            font-size: 1.8em;
+            font-weight: 600;
+        }
+
+        .subtitle {
+            text-align: center;
+            color: #999;
+            margin-bottom: 40px;
+            font-size: 1em;
+            line-height: 1.5;
+        }
+
+        .form-group {
+            margin-bottom: 25px;
+            position: relative;
+        }
+
+        label {
+            display: block;
+            margin-bottom: 10px;
+            color: #e8e8e8;
+            font-weight: 600;
+            font-size: 0.95em;
+        }
+
+        input, textarea, select {
+            width: 100%;
+            padding: 16px 20px;
+            background: rgba(255, 255, 255, 0.06);
+            backdrop-filter: blur(10px);
+            border: 1px solid rgba(255, 107, 53, 0.25);
+            border-radius: 16px;
+            font-size: 1em;
+            color: #fff;
+            transition: all 0.3s ease;
+        }
+
+        input::placeholder, textarea::placeholder {
+            color: #777;
+        }
+
+        input:focus, textarea:focus, select:focus {
+            outline: none;
+            border-color: #ff6b35;
+            background: rgba(255, 107, 53, 0.12);
+            box-shadow: 0 0 0 4px rgba(255, 107, 53, 0.12);
+            transform: translateY(-2px);
+        }
+
+        select {
+            cursor: pointer;
+            background-image: url("data:image/svg+xml,%3Csvg xmlns='http://www.w3.org/2000/svg' width='14' height='14' viewBox='0 0 14 14'%3E%3Cpath fill='%23ff6b35' d='M7 10L2 5h10z'/%3E%3C/svg%3E");
+            background-repeat: no-repeat;
+            background-position: right 18px center;
+            appearance: none;
+        }
+
+        select option {
+            background: #1a1a1a;
+            color: #fff;
+        }
+
+        textarea {
+            resize: vertical;
+            min-height: 140px;
+        }
+
+        .file-upload {
+            position: relative;
+            overflow: hidden;
+        }
+
+        .file-upload input[type="file"] {
+            position: absolute;
+            opacity: 0;
+            cursor: pointer;
+            width: 100%;
+            height: 100%;
+        }
+
+        .file-label {
+            display: block;
+            padding: 16px 20px;
+            background: rgba(255, 255, 255, 0.04);
+            border: 2px dashed rgba(255, 107, 53, 0.3);
+            border-radius: 16px;
+            text-align: center;
+            color: #999;
+            cursor: pointer;
+            transition: all 0.3s ease;
+            font-size: 0.95em;
+        }
+
+        .file-label:hover {
+            background: rgba(255, 107, 53, 0.12);
+            border-color: #ff6b35;
+            color: #ff6b35;
+        }
+
+        .submit-btn {
+            width: 100%;
+            padding: 18px;
+            background: linear-gradient(135deg, #ff6b35, #f7931e);
+            color: white;
+            border: none;
+            border-radius: 16px;
+            font-size: 1.15em;
+            font-weight: 700;
+            cursor: pointer;
+            transition: all 0.3s ease;
+            text-transform: uppercase;
+            letter-spacing: 1.5px;
+            box-shadow: 0 10px 25px rgba(255, 107, 53, 0.35);
+            margin-bottom: 15px;
+        }
+
+        .submit-btn:hover {
+            transform: translateY(-3px);
+            box-shadow: 0 15px 35px rgba(255, 107, 53, 0.45);
+        }
+
+        .submit-btn:active {
+            transform: translateY(-1px);
+        }
+
+        .whatsapp-btn {
+            width: 100%;
+            padding: 18px;
+            background: linear-gradient(135deg, #25D366, #128C7E);
+            color: white;
+            border: none;
+            border-radius: 16px;
+            font-size: 1.15em;
+            font-weight: 700;
+            cursor: pointer;
+            transition: all 0.3s ease;
+            text-transform: uppercase;
+            letter-spacing: 1.5px;
+            box-shadow: 0 10px 25px rgba(37, 211, 102, 0.35);
+            display: flex;
+            align-items: center;
+            justify-content: center;
+            gap: 10px;
+        }
+
+        .whatsapp-btn:hover {
+            transform: translateY(-3px);
+            box-shadow: 0 15px 35px rgba(37, 211, 102, 0.45);
+        }
+
+        .whatsapp-btn:active {
+            transform: translateY(-1px);
+        }
+
+        .icon {
+            display: inline-block;
+            margin-right: 8px;
+        }
+
+        .info-text {
+            text-align: center;
+            color: #777;
+            font-size: 0.85em;
+            margin-top: 25px;
+            line-height: 1.6;
+        }
+
+        @media (max-width: 600px) {
+            .container {
+                padding: 35px 28px;
+            }
+            
+            .brand-name {
+                font-size: 2em;
+            }
+
+            h2 {
+                font-size: 1.5em;
+            }
+
+            .language-toggle {
+                top: 10px;
+                right: 10px;
+            }
+
+            .lang-btn {
+                padding: 8px 15px;
+                font-size: 0.85em;
+            }
+        }
+    </style>
+</head>
+<body>
+    <!-- Language Toggle -->
+    <div class="language-toggle">
+        <button class="lang-btn active" onclick="switchLanguage('mr')">मराठी</button>
+        <button class="lang-btn" onclick="switchLanguage('en')">English</button>
+    </div>
+
+    <!-- Animated background shapes -->
+    <div class="shape shape1"></div>
+    <div class="shape shape2"></div>
+    <div class="shape shape3"></div>
+    <div class="shape shape4"></div>
+
+    <div class="container">
+        <div class="brand-name">
+            <span class="gradient-text">Mukundraj</span><br>
+            <span class="gradient-text">Graphics</span> <span class="and">&</span> <span class="gradient-text">Gifts</span>
+        </div>
+        
+        <h2 id="formHeading">संपर्क करा</h2>
+        <p class="subtitle" id="subtitle">लोगो, ब्रँडिंग, कस्टम टी-शर्ट, कप आणि गिफ्ट आयटम्स!</p>
+
+        <form id="contactForm">
+            <div class="form-group">
+                <label for="name" id="labelName"><span class="icon">👤</span>तुमचे नाव *</label>
+                <input type="text" id="name" name="name" required placeholder="उदा. राज कुमार">
+            </div>
+
+            <div class="form-group">
+                <label for="mobile" id="labelMobile"><span class="icon">📱</span>मोबाईल नंबर *</label>
+                <input type="tel" id="mobile" name="mobile" required placeholder="उदा. 9876543210" pattern="[0-9]{10}">
+            </div>
+
+            <div class="form-group">
+                <label for="service" id="labelService"><span class="icon">🎨</span>सेवा निवडा *</label>
+                <select id="service" name="service" required>
+                    <option value="">सेवा निवडा</option>
+                    <option value="Logo Design">लोगो डिझाईन</option>
+                    <option value="Branding">ब्रँडिंग</option>
+                    <option value="Custom T-Shirt">कस्टम टी-शर्ट</option>
+                    <option value="Custom Cup/Mug">कस्टम कप/मग</option>
+                    <option value="Gift Items">गिफ्ट आयटम्स</option>
+                    <option value="Social Media Design">सोशल मीडिया डिझाईन</option>
+                    <option value="Print Design">प्रिंट डिझाईन</option>
+                    <option value="Web Design">वेब डिझाईन</option>
+                    <option value="Other">इतर</option>
+                </select>
+            </div>
+
+            <div class="form-group">
+                <label for="message" id="labelMessage"><span class="icon">💬</span>तुमचा संदेश (Optional)</label>
+                <textarea id="message" name="message" placeholder="तुमच्या प्रोजेक्टबद्दल आम्हाला सांगा..."></textarea>
+            </div>
+
+            <button type="button" class="whatsapp-btn" onclick="sendWhatsApp()">
+                <span style="font-size: 1.3em;">💬</span>
+                <span id="whatsappBtnText">WhatsApp वर संदेश पाठवा</span>
+            </button>
+        </form>
+
+        <p class="info-text" id="infoText">तुमची माहिती सुरक्षित आहे. आम्ही 24 तासांत प्रतिसाद देऊ!</p>
+    </div>
+
+    <script>
+        const translations = {
+            mr: {
+                formHeading: "संपर्क करा",
+                subtitle: "लोगो, ब्रँडिंग, कस्टम टी-शर्ट, कप आणि गिफ्ट आयटम्स!",
+                labelName: "👤 तुमचे नाव *",
+                labelMobile: "📱 मोबाईल नंबर *",
+                labelService: "🎨 सेवा निवडा *",
+                labelMessage: "💬 तुमचा संदेश (Optional)",
+                whatsappBtnText: "WhatsApp वर संदेश पाठवा",
+                infoText: "तुमची माहिती सुरक्षित आहे. आम्ही 24 तासांत प्रतिसाद देऊ!",
+                namePlaceholder: "उदा. राज कुमार",
+                mobilePlaceholder: "उदा. 9876543210",
+                messagePlaceholder: "तुमच्या प्रोजेक्टबद्दल आम्हाला सांगा...",
+                selectService: "सेवा निवडा",
+                services: {
+                    "Logo Design": "लोगो डिझाईन",
+                    "Branding": "ब्रँडिंग",
+                    "Custom T-Shirt": "कस्टम टी-शर्ट",
+                    "Custom Cup/Mug": "कस्टम कप/मग",
+                    "Gift Items": "गिफ्ट आयटम्स",
+                    "Social Media Design": "सोशल मीडिया डिझाईन",
+                    "Print Design": "प्रिंट डिझाईन",
+                    "Web Design": "वेब डिझाईन",
+                    "Other": "इतर"
+                }
+            },
+            en: {
+                formHeading: "Contact Us",
+                subtitle: "Logos, Branding, Custom T-Shirts, Cups & Gift Items!",
+                labelName: "👤 Your Name *",
+                labelMobile: "📱 Mobile Number *",
+                labelService: "🎨 Select Service *",
+                labelMessage: "💬 Your Message (Optional)",
+                whatsappBtnText: "Send Message on WhatsApp",
+                infoText: "Your information is secure. We'll respond within 24 hours!",
+                namePlaceholder: "e.g. Raj Kumar",
+                mobilePlaceholder: "e.g. 9876543210",
+                messagePlaceholder: "Tell us about your project...",
+                selectService: "Select Service",
+                services: {
+                    "Logo Design": "Logo Design",
+                    "Branding": "Branding",
+                    "Custom T-Shirt": "Custom T-Shirt",
+                    "Custom Cup/Mug": "Custom Cup/Mug",
+                    "Gift Items": "Gift Items",
+                    "Social Media Design": "Social Media Design",
+                    "Print Design": "Print Design",
+                    "Web Design": "Web Design",
+                    "Other": "Other"
+                }
+            }
+        };
+
+        let currentLang = 'mr';
+
+        function switchLanguage(lang) {
+            currentLang = lang;
+            const t = translations[lang];
+            
+            // Update text content
+            document.getElementById('formHeading').textContent = t.formHeading;
+            document.getElementById('subtitle').textContent = t.subtitle;
+            document.getElementById('labelName').innerHTML = t.labelName;
+            document.getElementById('labelMobile').innerHTML = t.labelMobile;
+            document.getElementById('labelService').innerHTML = t.labelService;
+            document.getElementById('labelMessage').innerHTML = t.labelMessage;
+            document.getElementById('whatsappBtnText').textContent = t.whatsappBtnText;
+            document.getElementById('infoText').textContent = t.infoText;
+            
+            // Update placeholders
+            document.getElementById('name').placeholder = t.namePlaceholder;
+            document.getElementById('mobile').placeholder = t.mobilePlaceholder;
+            document.getElementById('message').placeholder = t.messagePlaceholder;
+            
+            // Update service dropdown
+            const serviceSelect = document.getElementById('service');
+            const selectedValue = serviceSelect.value;
+            serviceSelect.innerHTML = `<option value="">${t.selectService}</option>`;
+            
+            Object.keys(t.services).forEach(key => {
+                const option = document.createElement('option');
+                option.value = key;
+                option.textContent = t.services[key];
+                if (key === selectedValue) option.selected = true;
+                serviceSelect.appendChild(option);
+            });
+            
+            // Update active button
+            document.querySelectorAll('.lang-btn').forEach(btn => {
+                btn.classList.remove('active');
+            });
+            event.target.classList.add('active');
+        }
+
+        function sendWhatsApp() {
+            const name = document.getElementById('name').value;
+            const mobile = document.getElementById('mobile').value;
+            const service = document.getElementById('service').value;
+            const message = document.getElementById('message').value;
+
+            // Validation
+            if (!name || !mobile || !service) {
+                alert(currentLang === 'mr' ? 
+                    'कृपया सर्व आवश्यक माहिती भरा!' : 
+                    'Please fill all required fields!');
+                return;
+            }
+
+            if (!/^[0-9]{10}$/.test(mobile)) {
+                alert(currentLang === 'mr' ? 
+                    'कृपया वैध 10 अंकी मोबाईल नंबर टाका!' : 
+                    'Please enter a valid 10-digit mobile number!');
+                return;
+            }
+
+            // Craft WhatsApp message
+            let whatsappMessage = currentLang === 'mr' ? 
+                `नमस्कार! 🎨\n\n*नाव:* ${name}\n*मोबाईल:* ${mobile}\n*सेवा:* ${service}` :
+                `Hello! 🎨\n\n*Name:* ${name}\n*Mobile:* ${mobile}\n*Service:* ${service}`;
+
+            if (message) {
+                whatsappMessage += currentLang === 'mr' ? 
+                    `\n*संदेश:* ${message}` : 
+                    `\n*Message:* ${message}`;
+            }
+
+            // WhatsApp Universal URL
+            const whatsappNumber = '917499731857';
+            const encodedMessage = encodeURIComponent(whatsappMessage);
+            const whatsappURL = `https://wa.me/${whatsappNumber}?text=${encodedMessage}`;
+
+            // Open WhatsApp
+            window.open(whatsappURL, '_blank');
+        }
+    </script>
+</body>
+</html>
